@@ -11,6 +11,7 @@
   备选包，themeId 为 `starship-command-deck-night`，会另起一个新条目，暂未使用
 - `marketing/`：中文/英文宣传文案、Studio 投稿步骤和 GitHub 上传指南
 - `codexpp/starship-command-deck.user.js`：Codex++ 完整版用户脚本（自带六张内嵌背景）
+- `assets/`：六张 8K 背景原图（WebP，合计 13.00 MB），供脚本的回退地址与后续轻量版使用
 
 ## 两个渠道，两套东西
 
@@ -84,6 +85,17 @@ https://cdn.jsdelivr.net/gh/coyivayuxa67-cmd/BBZC8888@main/codexpp/starship-comm
 
 18MB 的脚本直接提交进 git，意味着以后每发一版历史都会增加约 18MB。
 后续版本建议只发 Release 附件（或 jsDelivr 从 tag 取），不再提交进 git。
+
+### 回退资源
+
+5.0.1 的 `ASSET_BASES` 依次是：本地覆盖值 →
+`raw.githubusercontent.com` → `jsDelivr` → `github raw`。
+这三条远程地址都指向本仓库的 `assets/` 目录，已补齐六张 WebP
+（合计 13,626,964 字节），地址实测可用，不再是死链。
+
+正常加载走内嵌数据，回退只在解码异常时才用到。
+补齐这批资源还有一个用处：将来可以做一个约 143 KB 的轻量脚本，
+图片走 CDN 缓存，这样每次升级不必重新下载 18MB。
 
 ## 当前主题
 
