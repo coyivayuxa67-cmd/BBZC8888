@@ -10,6 +10,36 @@
 - `themes/starship-command-deck-night/`、`releases/starship-command-deck-night-5.0.0.zip`：
   备选包，themeId 为 `starship-command-deck-night`，会另起一个新条目，暂未使用
 - `marketing/`：中文/英文宣传文案、Studio 投稿步骤和 GitHub 上传指南
+- `codexpp/starship-command-deck.user.js`：Codex++ 完整版用户脚本（自带六张内嵌背景）
+
+## 两个渠道，两套东西
+
+这个仓库同时保存两个渠道的产物，互不通用：
+
+| 渠道 | 产物 | 能力 |
+| --- | --- | --- |
+| DreamSkin（官方客户端静态主题） | `releases/starship-command-deck-5.0.0.zip` | 单张背景、配色、Safe CSS。已上架 |
+| Codex++（用户脚本） | `codexpp/starship-command-deck.user.js` | 六背景切换、六款舷窗、流星、外星飞船、任务树、输入舱动效 |
+
+DreamSkin 包是静态视觉，**不要**把用户脚本提交到 DreamSkin 主题库。
+Codex++ 脚本也不能用 DreamSkin 包替代，两者格式完全不同。
+
+## Codex++ 用户脚本
+
+`codexpp/starship-command-deck.user.js` 版本 `5.0.1`，约 18.3 MB，
+六张背景以 base64 内嵌，安装后不依赖外部图床。
+
+原始 RC 的元数据指向空的 `tianxiayiran/zhiku`，本版本已改为本仓库，
+并补上了 `@downloadURL` 与 `@updateURL`，支持 Codex++ 的脚本更新检查：
+
+```text
+@downloadURL https://raw.githubusercontent.com/coyivayuxa67-cmd/BBZC8888/main/codexpp/starship-command-deck.user.js
+@updateURL   https://raw.githubusercontent.com/coyivayuxa67-cmd/BBZC8888/main/codexpp/starship-command-deck.user.js
+```
+
+注意：仓库里的这份是发布用产物。本机 Codex++ 实际加载的是
+`%APPDATA%\Codex++\user_scripts\星舰指挥台主题.js`（当前为 `4.8.7-smaller-meteor`，
+使用本地路径加载资源），两者相互独立，覆盖安装前请先备份。
 
 ## 当前主题
 
