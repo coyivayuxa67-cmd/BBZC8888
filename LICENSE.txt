@@ -1,0 +1,8 @@
+Copyright (c) 2026 tianxiayiran
+
+All Rights Reserved.
+
+This package may be installed for personal use. Redistribution of the
+included artwork or modified public releases requires permission from the
+copyright holder.
+

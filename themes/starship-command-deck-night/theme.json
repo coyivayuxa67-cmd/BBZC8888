@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "starship-command-deck-night",
+  "name": "星舰指挥台：夜航离港",
+  "image": "background.webp",
+  "appearance": "dark",
+  "art": {
+    "focusX": 0.5,
+    "focusY": 0.5,
+    "safeArea": "left",
+    "taskMode": "ambient"
+  },
+  "colors": {
+    "background": "#04121d",
+    "panel": "#071924",
+    "panelAlt": "#0b3044",
+    "accent": "#19d8ff",
+    "accentAlt": "#8feeff",
+    "secondary": "#9ab8c7",
+    "highlight": "#00eaa5",
+    "text": "#d7edf5",
+    "muted": "#759cad",
+    "line": "#1e7890"
+  },
+  "brandSubtitle": "EARTH DEPARTURE BRIDGE",
+  "tagline": "从地球家园启航，驶向深空。",
+  "projectPrefix": "NAV",
+  "projectLabel": "航程",
+  "statusText": "母星夜面 · 启航港",
+  "quote": "愿每一次远征，都从清晰的航向开始。",
+  "promoTitle": "星舰指挥台：夜航离港",
+  "promoSub": "Codex DreamSkin 静态舰桥主题"
+}

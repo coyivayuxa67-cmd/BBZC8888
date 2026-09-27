@@ -1,0 +1,46 @@
+{
+  "packageVersion": 1,
+  "themeId": "starship-command-deck-night",
+  "version": "5.0.0",
+  "skinApiVersion": 1,
+  "minClientVersion": "1.0.0",
+  "platforms": [
+    "windows",
+    "macos"
+  ],
+  "capabilities": [
+    "background",
+    "tokens",
+    "safe-css"
+  ],
+  "publisher": {
+    "id": "tianxiayiran",
+    "displayName": "JG"
+  },
+  "license": "All Rights Reserved",
+  "provenance": {
+    "aiGenerated": true,
+    "summary": "夜航离港背景为项目星舰视觉素材，可能包含 AI 生成与后期处理内容；公开发布前由作者确认素材来源与授权范围。"
+  },
+  "files": [
+    {
+      "path": "theme.json",
+      "mediaType": "application/json",
+      "bytes": 911,
+      "sha256": "59dbf93120095c0ef348debc3f3c6f104ca76c63c035976b833da045f806b9c4"
+    },
+    {
+      "path": "background.webp",
+      "mediaType": "image/webp",
+      "bytes": 560706,
+      "sha256": "9f39aca876ef5e7dd51cc1f2de0481ecd9e974452ee639f71c22f8fdd0bb0084"
+    },
+    {
+      "path": "theme.css",
+      "mediaType": "text/css",
+      "bytes": 1454,
+      "sha256": "d7797e65f360cad7535414f99760bc2a46beb630985a4b45ada97bdb03f7a83f"
+    }
+  ],
+  "createdAt": "2026-09-27T19:00:00+08:00"
+}
