@@ -17,6 +17,9 @@
 
 从地球夜景启航的未来舰桥静态主题。包含一张 8K WebP 背景、深色语义色和经过 DreamSkin Safe CSS 校验的组件样式。
 
+已于 2026-09-27 发布为 `5.0.0`，作为已有主题 `starship-command-deck`
+的更新版本上线，slug、下载数与收藏数均沿用。详见 `PUBLISHED.md`。
+
 ## 两个包的区别
 
 两个包的背景图、配色、Safe CSS 完全相同，只有 themeId 不同：

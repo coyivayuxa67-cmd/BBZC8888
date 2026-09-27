@@ -74,9 +74,22 @@
 - GitHub 仓库属于 `coyivayuxa67-cmd`，而 manifest 里发布者 ID 是
   `tianxiayiran`。两者不一致不影响校验，但发布账号决定真实归属。
 
-## 已发布记录（2026-09-27 从公开主题库核实）
+## 已发布记录
 
-同一作者账号下已有一个公开主题：
+2026-09-27 已完成 `5.0.0` 发布，公开主题库当前显示：
+
+| 项 | 值 |
+| --- | --- |
+| 主题 | 星舰指挥台：夜航离港 |
+| slug / themeId | `starship-command-deck` |
+| 版本 | `5.0.0` |
+| 线上版本 ID | `ver_50bbdac26bffa67b58c7` |
+| 状态 | `approved`（提交后约 6 秒由 `system:ai-moderation` 通过） |
+| 下载 / 收藏 | 822 / 4（沿用旧版本，未重置） |
+
+## 更早的版本
+
+同一作者账号此前的公开版本：
 
 | 项 | 值 |
 | --- | --- |
@@ -86,8 +99,8 @@
 | 发布版本 ID | `ver_48a679cbbecc66a965a0` |
 | 作者 | `yiran` / `usr_fea84bc4fb492297d8c7` |
 | 首次提交 | 2026-09-11 |
-| 下载 / 收藏 | 822 / 4 |
 | 背景图 | `bg-4-earth-ring-8k.webp`（环地），SHA256 `426a52ca…` |
+| 当前状态 | `disabled`，已被 5.0.0 接替 |
 
 本次投稿 `starship-command-deck` 5.0.0 用的是**另一张**图
 `bg-1-earth-night-8k.webp`（地球夜景），SHA256 `9f39aca8…`，
