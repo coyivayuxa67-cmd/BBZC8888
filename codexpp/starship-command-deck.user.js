@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         星舰指挥台主题
 // @namespace    https://github.com/coyivayuxa67-cmd/BBZC8888
-// @version      5.0.1
+// @version      5.0.2
 // @description  地球启航未来舰桥主题，内置六张高清背景
 // @homepageURL  https://github.com/coyivayuxa67-cmd/BBZC8888
 // @downloadURL  https://raw.githubusercontent.com/coyivayuxa67-cmd/BBZC8888/main/codexpp/starship-command-deck.user.js
@@ -13,7 +13,7 @@
 
   const API = "__codexCommandDeckTheme";
   const HOT_API = "__codexCommandDeckHotReload";
-  const VERSION = "5.0.1";
+  const VERSION = "5.0.2";
   const STYLE_ID = "codex-command-deck-v3-style";
   const TOOLS_ID = "codex-command-deck-v3-tools";
   const SETTINGS_ID = "codex-command-deck-v3-settings";
@@ -2314,12 +2314,6 @@
       const ny = shape(rawY);
       state.motionTargetX = -nx * 14;
       state.motionTargetY = -ny * 9;
-      root.style.setProperty("--cd-v41-frame-x", "0px");
-      root.style.setProperty("--cd-v41-frame-y", "0px");
-      root.style.setProperty("--cd-v41-glass-x", "0px");
-      root.style.setProperty("--cd-v41-glass-y", "0px");
-      root.style.setProperty("--cd-v41-hud-x", "0px");
-      root.style.setProperty("--cd-v41-hud-y", "0px");
       if (!state.motionFrame) state.motionFrame = requestAnimationFrame(stepExteriorMotion);
     }, { passive: true });
   }
@@ -2338,8 +2332,13 @@
       state.motionX = state.motionTargetX;
       state.motionY = state.motionTargetY;
     }
-    root.style.setProperty("--cd-v44-bg-x", `${state.motionX.toFixed(2)}px`);
-    root.style.setProperty("--cd-v44-bg-y", `${state.motionY.toFixed(2)}px`);
+    const bgEl = document.getElementById(BG_ID);
+    const paintNow = performance.now();
+    if (bgEl && (settled || paintNow - (state.lastBgPaintAt || 0) >= 32)) {
+      state.lastBgPaintAt = paintNow;
+      bgEl.style.setProperty("--cd-v44-bg-x", state.motionX.toFixed(2) + "px");
+      bgEl.style.setProperty("--cd-v44-bg-y", state.motionY.toFixed(2) + "px");
+    }
     if (!settled) state.motionFrame = requestAnimationFrame(stepExteriorMotion);
   }
 
@@ -2354,8 +2353,13 @@
     state.motionY = 0;
     state.motionTargetX = 0;
     state.motionTargetY = 0;
-    ["--cd-v41-frame-x", "--cd-v41-frame-y", "--cd-v41-glass-x", "--cd-v41-glass-y", "--cd-v41-hud-x", "--cd-v41-hud-y", "--cd-v44-bg-x", "--cd-v44-bg-y"]
+        ["--cd-v41-frame-x", "--cd-v41-frame-y", "--cd-v41-glass-x", "--cd-v41-glass-y", "--cd-v41-hud-x", "--cd-v41-hud-y"]
       .forEach((name) => root.style.setProperty(name, "0px"));
+    const bgEl = document.getElementById(BG_ID);
+    if (bgEl) {
+      bgEl.style.setProperty("--cd-v44-bg-x", "0px");
+      bgEl.style.setProperty("--cd-v44-bg-y", "0px");
+    }
   }
 
   function refreshCockpit() {
