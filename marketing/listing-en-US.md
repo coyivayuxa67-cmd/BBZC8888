@@ -22,7 +22,7 @@ A dark DreamSkin workspace built around Earth at night, cold cyan instrumentatio
 
 ## Installation
 
-1. Download `starship-command-deck-night-5.0.0.zip`
+1. Download `starship-command-deck-5.0.0.zip`
 2. Import the ZIP with the DreamSkin client
 3. Apply **Starship Command Deck: Earth Night Departure**
 

@@ -6,7 +6,7 @@
 
 - Studio 是纯浏览器本地工具，图片与编辑都在本机处理；只有点发布时才上传。
 - **Studio 支持直接导入主题 ZIP。** 2026-09-27 实测：导入
-  `starship-command-deck-night-5.0.0.zip` 后，主题名、ID、版本、平台、
+  `starship-command-deck-5.0.0.zip` 后，主题名、ID、版本、平台、
   发布者、许可证、AI 声明、来源摘要、十个颜色、Safe CSS、theme.json
   全部恢复，六项就绪检查一次全绿。导入时会询问“导入会覆盖当前草稿，继续吗？”。
 - 唯一的投稿入口是“导出”页签底部的 `发布到主题库` 按钮。
@@ -20,13 +20,18 @@
 
 1. 打开 `https://dreamskin.cc/studio` 并登录。
 2. 点页头 `导入`，选择
-   `github-repo-ready\releases\starship-command-deck-night-5.0.0.zip`，
+   `github-repo-ready\releases\starship-command-deck-5.0.0.zip`，
    在弹窗里确认覆盖草稿。
 3. 切到 `导出` 页签，确认六项都是 `已通过`：
    背景图片、主题信息、theme.json 源码、文字对比度、Safe CSS、包信息。
+   主题信息那一行应显示 `星舰指挥台：夜航离港 · starship-command-deck`。
 4. 勾选 `我确认拥有或有权使用该主题的素材与样式，并同意平台审核`。
 5. 点 `发布到主题库`，出现 `已提交审核。` 即成功。
 6. 到 `https://dreamskin.cc/account` 的创作者工作区查看审核状态。
+
+> 因为 themeId 与已发布的“星舰指挥台”相同，服务端会把它作为**该主题的新版本**
+> 处理：审核期间旧的 3.3.7 继续保持公开，审核通过后由 5.0.0 接替，
+> slug、下载数、收藏都不会丢。
 
 > 如果不用导入，也可以手动重建：`背景画面` 选 `background.webp`，
 > 外观选 `深色`，安全区选 `左侧`，任务画面选 `环境`，
@@ -50,7 +55,7 @@
 ## 投稿信息
 
 - 主题名：星舰指挥台：夜航离港
-- 主题 ID：`starship-command-deck-night`
+- 主题 ID：`starship-command-deck`
 - 版本：`5.0.0`
 - 平台：Windows、macOS
 - 能力：background、tokens、safe-css
@@ -84,9 +89,14 @@
 | 下载 / 收藏 | 822 / 4 |
 | 背景图 | `bg-4-earth-ring-8k.webp`（环地），SHA256 `426a52ca…` |
 
-新投稿 `starship-command-deck-night` 用的是**另一张**图
+本次投稿 `starship-command-deck` 5.0.0 用的是**另一张**图
 `bg-1-earth-night-8k.webp`（地球夜景），SHA256 `9f39aca8…`，
-与已发布的环地图不同文件。
+与已发布的环地图不是同一个文件，视觉上是全新的夜航离港场景。
 
-同一作者若只想更新旧主题，应走 `POST /v1/me/themes/<slug>/resubmit`
-保留原 slug、下载数和收藏；新建 themeId 会另起一个条目。
+更新已发布主题的正确做法是**发布同 themeId 的新版本**：
+`POST /v1/me/themes/package`，包内 themeId 填 `starship-command-deck`。
+创作者工作区里的 `重新送审`（`POST /v1/me/themes/<id>/resubmit`）
+**不带请求体**，只是把已有的一次提交重新排队，不能上传新内容。
+
+备选包 `starship-command-deck-night-5.0.0.zip` 的 themeId 是
+`starship-command-deck-night`，会另起一个新条目，当前未采用。

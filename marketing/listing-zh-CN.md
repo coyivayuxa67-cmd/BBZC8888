@@ -23,7 +23,7 @@
 
 ## 安装
 
-1. 下载 `starship-command-deck-night-5.0.0.zip`
+1. 下载 `starship-command-deck-5.0.0.zip`
 2. 使用 DreamSkin 客户端导入普通主题 ZIP
 3. 在已保存主题中应用“星舰指挥台：夜航离港”
 
