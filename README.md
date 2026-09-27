@@ -29,6 +29,10 @@ Codex++ 脚本也不能用 DreamSkin 包替代，两者格式完全不同。
 `codexpp/starship-command-deck.user.js` 版本 `5.0.1`，约 18.3 MB，
 六张背景以 base64 内嵌，安装后不依赖外部图床。
 
+仓库中该文件的 SHA256 为
+`25c9ea21b76ceccfb53e673cce829e7ef2d3a23f9cc7a7aca32f1e3819eb9dc3`，
+与 `raw.githubusercontent.com` 上提供的字节一致。
+
 原始 RC 的元数据指向空的 `tianxiayiran/zhiku`，本版本已改为本仓库，
 并补上了 `@downloadURL` 与 `@updateURL`，支持 Codex++ 的脚本更新检查：
 
