@@ -2,7 +2,7 @@
 
 目标仓库：
 
-`https://github.com/tianxiayiran/zhiku`
+`https://github.com/coyivayuxa67-cmd/BBZC8888`
 
 ## 方式一：网页上传
 
@@ -16,8 +16,8 @@
 ## 方式二：Git 命令
 
 ```powershell
-git clone https://github.com/tianxiayiran/zhiku.git
-Set-Location zhiku
+git clone https://github.com/coyivayuxa67-cmd/BBZC8888.git
+Set-Location BBZC8888
 
 Copy-Item -Path "C:\Users\27837\Documents\Codex\codex智脑提升\github-repo-ready\*" -Destination . -Recurse -Force
 
@@ -54,18 +54,19 @@ zhiku/
 
 ## 当前推送状态
 
-本地提交已经创建：
+已完成推送到 `https://github.com/coyivayuxa67-cmd/BBZC8888`：
 
-`d8362d8 Add Starship Command Deck DreamSkin 5.0.0`
-
-远程已配置为：
-
-`https://github.com/tianxiayiran/zhiku.git`
-
-当前机器上的 GitHub 凭据属于 `coyivayuxa67-cmd`，没有目标仓库写权限。切换到有 `tianxiayiran/zhiku` 写权限的账号后，执行：
-
-```powershell
-git -C "C:\Users\27837\Documents\Codex\codex智脑提升\github-repo-ready" push -u origin main
+```text
+f6e7b0f Document GitHub push account requirement
+d8362d8 Add Starship Command Deck DreamSkin 5.0.0
 ```
 
-也可以直接在 GitHub 网页上传 `github-repo-ready.zip` 解压后的内容。
+`main` 已跟踪 `origin/main`，远端 `HEAD` 与本地 `f6e7b0f` 一致，13 个文件全部上传。
+
+如果之后网络中断，用带超时与重试的方式续传：
+
+```powershell
+git -C "C:\Users\27837\Documents\Codex\codex智脑提升\github-repo-ready" `
+  -c http.version=HTTP/1.1 -c http.schannelCheckRevoke=false `
+  -c http.lowSpeedLimit=1000 -c http.lowSpeedTime=45 push -u origin main
+```
