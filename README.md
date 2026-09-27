@@ -97,6 +97,19 @@ https://cdn.jsdelivr.net/gh/coyivayuxa67-cmd/BBZC8888@main/codexpp/starship-comm
 补齐这批资源还有一个用处：将来可以做一个约 143 KB 的轻量脚本，
 图片走 CDN 缓存，这样每次升级不必重新下载 18MB。
 
+**三条回退地址的实测速度（2026-09-27，取 `bg-6-milky-way-8k.webp`，383786 字节）**
+
+| 地址 | 结果 |
+| --- | --- |
+| `cdn.jsdelivr.net` | 200，383786 字节，哈希与原图一致，数秒内完成 |
+| `raw.githubusercontent.com` | 200，但极慢：一次 90 秒只收到 65536 字节 |
+| `github.com/.../raw/refs/heads/main/...` | 302 跳到 raw 的 `refs/heads/main` 路径，内容正确但同样受 raw 速度影响 |
+
+三个地址指向的都是同一份正确内容，差别只在速度。脚本里回退顺序是
+raw → jsDelivr → github raw，按当前网络表现，jsDelivr 应该排在前面。
+这一条我没有改：嵌入资源已验证可用，回退链实际上不会被触发，
+为它单独发一版要重新提交 18MB，不划算。等下次有其它改动时一并调整。
+
 ## 当前主题
 
 **星舰指挥台：夜航离港**
