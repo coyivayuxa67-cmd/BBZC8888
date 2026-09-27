@@ -45,6 +45,46 @@ Codex++ 脚本也不能用 DreamSkin 包替代，两者格式完全不同。
 `%APPDATA%\Codex++\user_scripts\星舰指挥台主题.js`（当前为 `4.8.7-smaller-meteor`，
 使用本地路径加载资源），两者相互独立，覆盖安装前请先备份。
 
+### Release
+
+已发布 `v5.0.1`：
+
+`https://github.com/coyivayuxa67-cmd/BBZC8888/releases/tag/v5.0.1`
+
+附件两个：
+
+| 附件 | 大小 | 说明 |
+| --- | --- | --- |
+| `starship-command-deck.user.js` | 18310475 字节 | Codex++ 用户脚本 |
+| `starship-command-deck-dreamskin-5.0.0.zip` | 527238 字节 | DreamSkin 静态主题包 |
+
+**下载路径实测（2026-09-27，国内网络）**
+
+`github.com/<owner>/<repo>/releases/download/...` 与 `releases/latest/download/...`
+三次测试全部超时：TCP 连接建立、请求已发出，但 15 到 21 秒内收到 0 字节。
+同环境下这几个是正常的：
+
+| 路径 | 结果 |
+| --- | --- |
+| `raw.githubusercontent.com` | 200，18MB 完整下载成功 |
+| `cdn.jsdelivr.net/gh/...` | 200 |
+| `release-assets.githubusercontent.com` | 可达 |
+| `api.github.com/.../releases/assets/<id>`（带 token） | 可下载 |
+
+结论：Release 页面适合展示与海外用户，**国内用户请走 raw 或 jsDelivr**：
+
+```text
+https://raw.githubusercontent.com/coyivayuxa67-cmd/BBZC8888/main/codexpp/starship-command-deck.user.js
+https://cdn.jsdelivr.net/gh/coyivayuxa67-cmd/BBZC8888@main/codexpp/starship-command-deck.user.js
+```
+
+脚本里的 `@downloadURL` / `@updateURL` 指向 raw，正是因为这个路径实测可用。
+
+### 关于仓库体积
+
+18MB 的脚本直接提交进 git，意味着以后每发一版历史都会增加约 18MB。
+后续版本建议只发 Release 附件（或 jsDelivr 从 tag 取），不再提交进 git。
+
 ## 当前主题
 
 **星舰指挥台：夜航离港**
