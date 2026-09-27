@@ -51,3 +51,21 @@ zhiku/
 2. 审核通过后，把 DreamSkin 主题详情页链接补进仓库 README。
 3. 后续版本继续放在 `releases/`，不要覆盖旧版本。
 4. 更新主题时同时更新 `manifest.json` 的版本、文件哈希和 `theme.json` 内容。
+
+## 当前推送状态
+
+本地提交已经创建：
+
+`d8362d8 Add Starship Command Deck DreamSkin 5.0.0`
+
+远程已配置为：
+
+`https://github.com/tianxiayiran/zhiku.git`
+
+当前机器上的 GitHub 凭据属于 `coyivayuxa67-cmd`，没有目标仓库写权限。切换到有 `tianxiayiran/zhiku` 写权限的账号后，执行：
+
+```powershell
+git -C "C:\Users\27837\Documents\Codex\codex智脑提升\github-repo-ready" push -u origin main
+```
+
+也可以直接在 GitHub 网页上传 `github-repo-ready.zip` 解压后的内容。
